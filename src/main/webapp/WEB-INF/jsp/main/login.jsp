@@ -31,7 +31,7 @@
                                 <h1 class="h4 text-red-900 mb-4" style="color: red">NaTime</h1>
                                 <h1 class="h3 text-red-900 mb-4" style="color: red">나타임</h1>
                             </div>
-                            <form action="${pageContext.request.contextPath}/loginCk.do" novalidate="novalidate" method="post">
+                            <form action="${pageContext.request.contextPath}/loginCK.do" novalidate="novalidate" method="post">
                                 <fieldset>
                                     <div>
                                         <section>
@@ -56,7 +56,7 @@
                                         </section>
                                     </div>
                                 </fieldset>
-                                <button href="#" class="btn btn-user btn-block" style="color: white; background-color: red" type="submit">로그인</button>
+                                <button class="btn btn-user btn-block" style="color: white; background-color: red" type="submit">로그인</button>
                             </form>
                             <div class="note">
                                 <a href="${pageContext.request.contextPath}/findUserPage.do" style="color: gray">아이디/비밀번호 찾기</a>

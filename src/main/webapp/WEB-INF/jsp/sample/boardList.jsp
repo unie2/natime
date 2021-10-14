@@ -14,6 +14,7 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
+<%@ include file="/WEB-INF/include/topbar.jspf"%>
     <h2>목록</h2>
     <table style="border: 1px solid #ccc">
         <colgroup>

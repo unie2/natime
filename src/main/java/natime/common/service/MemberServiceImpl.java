@@ -28,13 +28,11 @@ public class MemberServiceImpl implements MemberService {
 
         if ((resultMap = memberDAO.Login(map)) == null) {
             log.error("등록이 안된 회원 ID : " + map.get("id"));
-            return 0;
-        } else if (!resultMap.containsKey("pw")) {
-            log.error("회원가입이 필요함 ID : " + map.get("id"));
             return 1;
         } else {
             try {
-                map.put("pw", sha_256.encrypt((String)map.get("pw")));
+                //map.put("pw", sha_256.encrypt((String)map.get("pw")));
+                map.put("pw", (String)map.get("pw"));
             } catch (Exception e) {
                 log.error("비밀번호 sha 암호화 오류 : " + e);
             }
