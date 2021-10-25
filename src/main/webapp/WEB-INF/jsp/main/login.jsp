@@ -11,62 +11,130 @@
     <title>NaTime</title>
 
     <%@include file="/WEB-INF/include/head.jspf"%>
+    <link rel="stylesheet"href="style.css">
+    <script src="jqury-3.4.1.js"></script>
 
     <style>
-        @media (min-width: 817px) {
-            .body-login {
-                width: 817px;
-            }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Jalnan';
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fff;
+            background-size: cover;
         }
+        body::before {
+            content: "";
+            position: absolute; z-index: 1;
+            top: 0; right: 0; bottom: 0; left: 0;
+
+        }
+
+        .login-form {position: relative; z-index: 2;}
+        .login-form h1 {
+            font-size: 40px; color: #E23C43;
+            text-align: center;
+            margin-top: 150px;
+            margin-bottom: 60px;
+        }
+        .int-area {
+            width: 400px; position: relative;
+            margin-top: 20px;
+        }
+        .int-area:first-child {margin: 0;}
+        .int-area input {
+            width: 100%;
+            padding: 20px 10px 10px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #999;
+            font-size: 18px; color: #F8AEB2;
+            outline: none;
+        }
+        .int-area label {
+            position: absolute; left: 10px; top: 15px;
+            font-size: 18px; color: #999;
+            transition: all .5s ease;
+        }
+        .int-area label.warning {
+            color: red !important;
+            animation: warning .3s ease;
+            animation-iteration-count: 3;
+        }
+        @keyframes warning {
+            0% {transform: translateX(-8px);}
+            25% {transform: translateX(8px);}
+            50% {transform: translateX(-8px);}
+            75% {transform: translateX(8px);}
+        }
+        .int-area input:focus + label,
+        .int-area input:valid+ label {
+            top: -2px;
+            font-size: 15px; color: #FF4E4E;
+        }
+        .btn-area {margin-top: 30px;}
+        .btn-area button {
+            width: 100%; height: 50px;
+            background: #E23C43;
+            color: #FFF;
+            font-size: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .caption {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .caption a {
+            font-size: 15px; color: #999;
+            text-decoration: none;
+        }
+
     </style>
 </head>
-<body class="bg-gradient body-login" style="box-shadow: none;">
-    <div class="container">
-        <div class="card o-hidden border-0">
-            <div style="margin: auto;" class="card-body p-0">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="p-5" style="margin-top: 50px">
-                            <div class="text-center">
-                                <h1 class="h4 text-red-900 mb-4" style="color: red">NaTime</h1>
-                                <h1 class="h3 text-red-900 mb-4" style="color: red">나타임</h1>
-                            </div>
-                            <form action="${pageContext.request.contextPath}/loginCK.do" novalidate="novalidate" method="post">
-                                <fieldset>
-                                    <div>
-                                        <section>
-                                            <div class="row input_size">
-                                                <label class="label col col-4">아이디</label>
-                                                <div class="col col-8">
-                                                    <label class="input">
-                                                        <input type="text" name="id" autocomplete="off" autofocus>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </section>
-                                        <section>
-                                            <div class="row input_size">
-                                                <label class="label col col-4">비밀번호</label>
-                                                <div class="col col-8">
-                                                    <label class="input">
-                                                        <input type="password" name="pw" autocomplete="current-password">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </fieldset>
-                                <button class="btn btn-user btn-block" style="color: white; background-color: red" type="submit">로그인</button>
-                            </form>
-                            <div class="note">
-                                <a href="${pageContext.request.contextPath}/findUserPage.do" style="color: gray">아이디/비밀번호 찾기</a>
-                                <a href="${pageContext.request.contextPath}/registration.do" style="color: gray">회원가입</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<body>
+    <section class="login-form">
+        <h1>NaTime</h1>
+        <form action="${pageContext.request.contextPath}/loginCK.do" novalidate="novalidate" method="post">
+            <div class="int-area">
+                <input type="text" name="id" id="id"
+                       autocomplete="off" required>
+                <label for="id">USER NAME</label>
             </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw"
+                       autocomplete="off" required>
+                <label for="pw">PASSWORD</label>
+            </div>
+            <div class="btn-area">
+                <button id="btn"
+                        type="submit">LOGIN</button>
+            </div>
+        </form>
+        <div class="caption">
+            <a href="">Forgot Password?</a>
         </div>
-    </div>
+    </section>
+    <script>
+        var id = $('#id');
+        var id = $('#pw');
+        var id = $('#btn');
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning');
+                },1500);
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning');
+                },1500);
+            }
+        });
+    </script>
 </body>
 </html>

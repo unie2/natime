@@ -25,4 +25,33 @@
                 pw=#{pw}
         ]]>
     </select>
+
+    <select id="idCK" parameterType="string" resultType="int">
+        <![CDATA[
+            SELECT
+                COUNT(*)
+            FROM
+                member_info
+            WHERE
+                id=#{id}
+        ]]>
+    </select>
+
+    <insert id="registration" parameterType="hashmap">
+        <![CDATA[
+            INSERT INTO member_info (
+                id,
+                pw,
+                name,
+                phone,
+                email
+            ) VALUES (
+                #{id},
+                #{pw},
+                #{name},
+                #{phone},
+                #{email}
+            )
+        ]]>
+    </insert>
 </mapper>

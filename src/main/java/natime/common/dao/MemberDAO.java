@@ -16,4 +16,12 @@ public class MemberDAO extends AbstractDAO {
     public Map<String, Object> Login_2(Map<String, Object> map) {
         return (Map<String, Object>) selectOne("member.Login_2", map);
     }
+
+    public int idCK(String id) throws Exception {
+        return (int) selectOne("member.idCK", id);
+    }
+
+    public void registration(Map<String, Object> map) {
+        insert("member.registration", map);
+    }
 }

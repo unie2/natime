@@ -4,7 +4,10 @@ import natime.common.common.CommandMap;
 import natime.common.service.MemberService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -57,5 +60,30 @@ public class MemberController {
         HttpSession session = req.getSession();
         session.invalidate();
         return mv;
+    }
+
+    @RequestMapping(value = "/registration_page.do")
+    public ModelAndView registrationPage() throws Exception {
+        ModelAndView mv = new ModelAndView("/main/registration");
+        return mv;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/id_CK.do", method = RequestMethod.POST)
+    public int idCK(CommandMap commandMap, HttpServletResponse res) throws Exception {
+        String id = commandMap.getMap().get("id").toString();
+        int result = memberService.idCK(id);
+        return result;
+    }
+
+    @RequestMapping(value = "/registration.do")
+    public void registration(CommandMap commandMap, HttpServletResponse res) throws Exception {
+        res.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = res.getWriter();
+        if (memberService.registration(commandMap.getMap())) {
+            out.print("<script>alert('가입이 정상적으로 완료되었습니다.'); window.location.href='login_page.do'</script>");
+        } else {
+            out.print("<script>alert('오류가 발생했습니다.'); window.location.href='registration_page.do'</script>");
+        }
     }
 }

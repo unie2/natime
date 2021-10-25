@@ -2,14 +2,59 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<style>
+    .remove-space {
+        margin: -50px 0 0 0;
+    }
 
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-    <ul class="navbar-nav ml-auto">
-        <c:if test="${member_info ne null}">
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        padding: 14px 65px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+</style>
+
+<%--<div class="d-block w-100" style="background-color: red; color: white">NaTime</div>--%>
+<header class="jumbotron remove-space" style="background-color: #FF4848; text-align: center; height: 200px;">
+    <a href="#" style="text-decoration: none">
+        <h1 style="color: #FFC6C6; font-weight: 900; margin-top: 10px">NaTime</h1>
+        <h3 style="color: #FFC6C6; font-weight: 900">나타임</h3>
+    </a>
+</header>
+<div class="navbar navbar-inverse navbar-static-top" style="background-color: #FF9090">
+    <div class="container">
+        <div class="navbar-header">
+            <ul class="topnav" style="background-color: #FF9090; color: white; height: 40px">
+                <a href="#" id="my_lecture" role="button">
+                    내 시간표
+                </a>
+                <a href="#" id="lecture_evaluation">
+                    강의평가
+                </a>
+                <a href="#" id="my_page">
+                    마이페이지
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<c:if test="${member_info ne null}">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <ul class="navbar-nav ml-auto">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">${member_info.name}</span>
             <a href="${pageContext.request.contextPath}/logout.do">
                 로그아웃
             </a>
-        </c:if>
-    </ul>
-</nav>
+        </ul>
+    </nav>
+</c:if>
