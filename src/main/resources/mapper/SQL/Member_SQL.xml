@@ -54,4 +54,39 @@
             )
         ]]>
     </insert>
+
+    <select id="find_id" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+                id, name, email
+            FROM
+                member_info
+            WHERE
+                name = #{name}
+        ]]>
+    </select>
+
+    <select id="find_pw" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+                *
+            FROM
+                member_info
+            WHERE
+                name = #{name}
+            AND
+                id = #{id}
+        ]]>
+    </select>
+
+    <update id="change_pw" parameterType="hashmap">
+        <![CDATA[
+            UPDATE
+                member_info
+            SET
+                pw = #{temp_pw}
+            WHERE
+                id = #{id}
+        ]]>
+    </update>
 </mapper>

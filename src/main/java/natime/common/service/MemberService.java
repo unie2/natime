@@ -11,4 +11,8 @@ public interface MemberService {
     int idCK(String id) throws Exception;
 
     boolean registration(Map<String, Object> map) throws Exception;
+
+    String find_id(Map<String, Object> map) throws Exception;
+
+    String find_pw(Map<String, Object> map) throws Exception;
 }

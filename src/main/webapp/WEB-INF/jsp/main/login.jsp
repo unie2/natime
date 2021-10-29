@@ -113,7 +113,7 @@
             </div>
         </form>
         <div class="caption">
-            <a href="">Forgot Password?</a>
+            <a href="${pageContext.request.contextPath}/findInfo_page.do">Forgot Password?</a>
         </div>
     </section>
     <script>

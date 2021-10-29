@@ -38,6 +38,9 @@ public class MemberController {
         if (commandMap.getMap().get("id").equals("")) {
             out.print("<script>alert('아이디를 입력해주세요.');window.location.href='login_page.do'</script>");
             return;
+        } else if(commandMap.getMap().get("pw").equals("")) {
+            out.print("<script>alert('비밀번호를 입력해주세요.'); window.location.href='login_page.do'</script>");
+            return;
         }
 
         int flag = memberService.Login(commandMap.getMap(), req);
@@ -86,4 +89,28 @@ public class MemberController {
             out.print("<script>alert('오류가 발생했습니다.'); window.location.href='registration_page.do'</script>");
         }
     }
+
+    @RequestMapping(value = "/findInfo_page.do")
+    public ModelAndView findIDPage() throws Exception {
+        ModelAndView mv = new ModelAndView("/main/findInfo");
+        return mv;
+    }
+
+    @RequestMapping(value = "/find_id.do")
+    public void find_id(CommandMap commandMap, HttpServletResponse res) throws Exception {
+        String json = memberService.find_id(commandMap.getMap());
+        res.getWriter().print(json);
+        return;
+    }
+
+    @RequestMapping(value = "/find_pw.do")
+    public void find_pw(CommandMap commandMap, HttpServletResponse res) throws Exception {
+        String json = memberService.find_pw(commandMap.getMap());
+        res.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = res.getWriter();
+        out.print(json);
+        return;
+    }
+
+
 }
