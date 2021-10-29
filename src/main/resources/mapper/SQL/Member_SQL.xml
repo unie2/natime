@@ -58,11 +58,13 @@
     <select id="find_id" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
             SELECT
-                id, name, email
+                *
             FROM
                 member_info
             WHERE
                 name = #{name}
+            AND
+                email = #{email}
         ]]>
     </select>
 

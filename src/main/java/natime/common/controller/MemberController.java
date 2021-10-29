@@ -99,7 +99,9 @@ public class MemberController {
     @RequestMapping(value = "/find_id.do")
     public void find_id(CommandMap commandMap, HttpServletResponse res) throws Exception {
         String json = memberService.find_id(commandMap.getMap());
-        res.getWriter().print(json);
+        res.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = res.getWriter();
+        out.print(json);
         return;
     }
 

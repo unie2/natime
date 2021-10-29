@@ -90,10 +90,16 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String find_id(Map<String, Object> map) throws Exception {
-        List<Map<String, Object>> resultMap = memberDAO.find_id(map);
-        System.out.println("resultMap : " + resultMap);
         JSONObject obj = new JSONObject();
-
+        String email = (String) map.get("email");
+        map.put("email", aes_256.encrypt(email));
+        Map<String, Object> resultMap = memberDAO.find_id(map);
+        String id = (String) resultMap.get("id");
+        if (id.length() <= 0) {
+            obj.put("msg", "일치하는 정보가 없습니다.\n회원가입을 해주세요.");
+        } else {
+            obj.put("msg", "회원님의 아이디는 " + resultMap.get("id") + "입니다.");
+        }
         return obj.toJSONString();
     }
 

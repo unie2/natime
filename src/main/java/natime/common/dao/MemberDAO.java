@@ -26,8 +26,8 @@ public class MemberDAO extends AbstractDAO {
         insert("member.registration", map);
     }
 
-    public List<Map<String, Object>> find_id(Map<String, Object> map) {
-        return (List<Map<String, Object>>) selectList("member.find_id", map);
+    public Map<String, Object> find_id(Map<String, Object> map) throws Exception {
+        return (Map<String, Object>) selectOne("member.find_id", map);
     }
 
     public Map<String, Object> find_pw(Map<String, Object> map) throws Exception {

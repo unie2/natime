@@ -58,7 +58,7 @@
                         <div class="tab-content">
                             <div id="userID" class="id-find tab-pane fade in active show">
                                 <br>
-                                <form name="frm" id="formtag" action="${pageContext.request.contextPath}/find_id.do" method="post">
+                                <form name="frm" id="formtag" class="user" method="post" onsubmit="return false">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" autofocus name="name" placeholder="이름">
                                     </div>
@@ -114,8 +114,8 @@
                 alert(meg);
             },
             error: function (request, status, error) {
-                alert('다시 시도해주세요.');
-                return false;
+                console.log("code: " + request.status+ "\n" + "message : " + request.responseText + "\n" + "error : " + error);
+                alert('일치하는 정보가 없습니다.\n회원가입을 해주세요.');
             },
             async: true
         });
