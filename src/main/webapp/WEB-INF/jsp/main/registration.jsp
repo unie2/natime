@@ -9,69 +9,123 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NaTime</title>
 
-    <style>
-        .id_input_re_1 {
-            color: green;
-            display: none;
-        }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        .id_input_re_2 {
-            color: red;
-            display: none;
+
+    <style>
+        body {
+            min-height: 100vh;
+
+            background: -webkit-gradient(linear, left bottom, right top, from(#f8aebf), to(#FF4E4E));
+            background: -webkit-linear-gradient(bottom left,   #f8aebf 0%, #FF4E4E 100%);
+            background: -moz-linear-gradient(bottom left,   #f8aebf 0%, #FF4E4E 100%);
+            background: -o-linear-gradient(bottom left,  #f8aebf 0%, #FF4E4E 100%);
+            background: linear-gradient(to top right,  #f8aebfbf 0%, #FF4E4E 100%); }
+
+
+
+        .input-form {
+            max-width: 680px;
+            margin-top: 80px;
+            padding: 32px;
+            background: #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
         }
     </style>
 </head>
-<body class="body-container" id="page-top">
-
-<div id="wrapper" style="width: 1600px; margin: auto">
-    <div id="content-wrapper" class="d-flex flex-column">
-        <div id="content">
-            <div>
-                <div class="jumbotron bg-white remove-space" style="background-color: #FF4848; text-align: center; height: 180px;">
-                    <h1 style="color: #FFC6C6; font-weight: 900; margin-top: 10px;">회원 가입</h1>
+<body>
+<div class="container">
+    <div class="input-form-backgroud row">
+        <div class="input-form col-md-12 mx-auto">
+            <h4 class="mb-3">회원가입</h4>
+            <form class="validation-form" name="frm" action="${pageContext.request.contextPath}/registration.do" method="post">
+                <div class="row"> <div class="col-md-6 mb-3">
+                    <label for="name">이름</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="invalid-feedback">
+                        이름을 입력해주세요.
+                    </div>
                 </div>
-                <form name="frm" action="${pageContext.request.contextPath}/registration.do" class="user" method="post">
-                    <div class="form-group">
-                        <label class="control-label" for="id">아이디</label>
-                        <input type="text" class="form-control" id="id" name="id" placeholder="아이디"/>
-                        <button class="idCheck" type="button" id="idCheck" onclick="idCK();" value="N">중복확인</button>
+                    <div class="col-md-6 mb-3">
+                        <label for="nickname">별명</label>
+                        <input type="text" class="form-control" id="nickname" name="nickname" required>
+                        <div class="invalid-feedback">
+                            별명을 입력해주세요.
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label" for="pw">비밀번호</label>
-                        <input type="password" class="form-control form-control-user" id="pw" name="pw" placeholder="비밀번호">
+                </div>
+
+                <div class="row"> <div class="col-md-6 mb-3">
+                    <label for="id" style="display: block;">아이디</label>
+                    <input type="text" class="form-control" style="width: 68%; float: left" id="id" name="id" required>
+                    <button class="btn btn-success" type="button" style="font-size: revert; float: right; width: 28%" id="idCheck" onclick="idCK();" value="N">중복확인</button>
+                    <div class="invalid-feedback">
+                        아이디를 입력해주세요.
                     </div>
-                    <div>
-                        <label class="control-label" for="confirmpw">비밀번호 확인</label>
-                        <input type="password" class="form-control form-control-user" id="confirmpw" name="confirmpw" placeholder="비밀번호 확인">
+                </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" class="form-control" id="pw" name="pw" required>
+                        <div class="invalid-feedback">
+                            비밀번호를 입력해주세요.
+                        </div>
                     </div>
-                    <div>
-                        <label class="control-label" for="name">이름</label>
-                        <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="이름">
-                    </div>
-                    <div>
-                        <label class="control-label" for="phone">전화번호</label>
-                        <input type="phone" class="form-control form-control-user" id="phone" name="phone" placeholder="휴대폰번호">
-                    </div>
-                    <div>
-                        <label class="control-label" for="email">이메일주소</label>
-                        <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="이메일주소">
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmpw">비밀번호 확인</label>
+                    <input type="password" class="form-control" id="confirmpw" name="confirmpw" required>
+                    <div class="invalid-feedback">
+                        비밀번호를 입력해주세요.
                     </div>
 
-                    <hr>
-                    <a href="#" class="btn btn-user btn-block" style="color: white; background-color: red" onclick="check_onclick();">
-                        가입
-                    </a>
-                </form>
-            </div>
+                    <div class="mb-3">
+                        <label for="email">이메일</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="invalid-feedback">
+                            이메일을 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone">휴대폰 번호</label>
+                        <input type="phone" class="form-control" id="phone" name="phone" placeholder="010-XXXX-XXXX" required>
+                        <div class="invalid-feedback">
+                            휴대폰 번호를 입력해주세요.
+                        </div>
+                    </div>
+
+
+                    <hr class="mb-4">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="agreement" required>
+                        <label class="custom-control-label" for="agreement">개인정보 수집 및 이용에 동의합니다.</label>
+                    </div>
+                    <div class="mb-4"></div>
+                    <a href="#" class="btn btn-primary btn-danger btn-block" onclick="check_onclick();">가입</a>
+                </div>
+            </form>
         </div>
     </div>
+    <footer class="my-3 text-center text-small">
+        <p class="mb-1">&copy; NATIME</p>
+    </footer>
 </div>
-
 <%@include file="/WEB-INF/include/script.jspf"%>
+
 <script type="text/javascript">
     function idCK() {
         id = $("#id").val();
@@ -88,7 +142,8 @@
             data: {"id": id},
             success : function (data) {
                 if (data == 1) {
-                    alert("중복된 아이디입니다.");
+                    $("#idCheck").attr("value", "N");
+                    alert("중복된 아이디입니다.\n다른 아이디를 사용해주세요.");
                 } else if (data == 0) {
                     $("#idCheck").attr("value", "Y");
                     alert("사용 가능한 아이디입니다.");
@@ -100,13 +155,21 @@
             , async: true
         });
     }
-    
+
     function check_onclick() {
         theForm = document.frm;
         const exptext_mail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
         const exptext_phone = /^\d{2,3}-\d{3,4}-\d{4}$/;
 
-        if (theForm.id.value == "") {
+        if (theForm.name.value == "") {
+            alert('이름을 입력해주세요.');
+            theForm.name.focus();
+            return false;
+        } else if (theForm.nickname.value == "") {
+            alert('별명을 입력해주세요.');
+            theForm.nickname.focus();
+            return false;
+        } else if (theForm.id.value == "") {
             alert('아이디를 입력해주세요.');
             theForm.id.focus();
             return false;
@@ -126,25 +189,25 @@
             alert("비밀번호가 일치하지 않습니다.");
             theForm.confirmpw.focus();
             return false;
-        } else if (theForm.name.value == "") {
-            alert("이름을 입력해주세요.");
-            theForm.name.focus();
+        } else if (theForm.email.value == "") {
+            alert("이메일 주소를 입력해주세요.");
+            theForm.email.focus();
+            return false;
+        } else if (exptext_mail.test(theForm.email.value) == false) {
+            alert("이메일주소 형식이 올바르지 않습니다.");
+            theForm.email.focus();
             return false;
         } else if (theForm.phone.value == "") {
             alert("휴대폰 번호를 입력해주세요.");
             theForm.phone.focus();
             return false;
         } else if (exptext_phone.test(theForm.phone.value) == false) {
-            alert("전화번호 형식이 올바르지 않습니다. ex) 010-1234-5678");
+            alert("전화번호 형식이 올바르지 않습니다. ex) 010-1234-XXXX");
             theForm.phone.focus();
             return false;
-        } else if (theForm.email.value == "") {
-            alert("이메일주소를 입력해주세요.");
-            theForm.email.focus();
-            return false;
-        } else if (exptext_mail.test(theForm.email.value) == false) {
-            alert("이메일주소 형식이 올바르지 않습니다.");
-            theForm.email.focus();
+        } else if (!theForm.agreement.checked) {
+            alert("개인정보 수집 및 이용에 동의해주세요.");
+            theForm.agreement.focus();
             return false;
         } else {
             theForm.submit();
@@ -152,6 +215,5 @@
         }
     }
 </script>
-
 </body>
 </html>

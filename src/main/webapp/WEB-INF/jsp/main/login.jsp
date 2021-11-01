@@ -113,6 +113,9 @@
             </div>
         </form>
         <div class="caption">
+            <a href="${pageContext.request.contextPath}/registration_page.do">회원 가입</a>
+        </div>
+        <div class="caption">
             <a href="${pageContext.request.contextPath}/findInfo_page.do">Forgot Password?</a>
         </div>
     </section>
