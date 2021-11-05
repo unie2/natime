@@ -52,7 +52,7 @@ public class MemberController {
         } else if (flag == 3) {
             HttpSession session = req.getSession();
             Map<String, Object> map = (Map<String, Object>) session.getAttribute("member_info");
-            out.print("<script>window.location.href='sample/openSampleBoardList.do'</script>");
+            out.print("<script>window.location.href='boardList_page.do'</script>");
         }
 
     }
