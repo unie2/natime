@@ -10,4 +10,41 @@
                 board_info
         ]]>
     </select>
+
+    <insert id="insertBoard" parameterType="hashmap">
+        <![CDATA[
+            INSERT INTO board_info
+            (
+                id,
+                name,
+                nickname,
+                lecture,
+                professor,
+                title,
+                content,
+                year,
+                semester,
+                star,
+                creditScore,
+                lectureScore,
+                projectScore
+            )
+            VALUES
+            (
+                #{id},
+                #{name},
+                #{nickname},
+                #{lectureName},
+                #{professor},
+                #{title},
+                #{content},
+                #{lectureYear},
+                #{semester},
+                #{star},
+                #{creditScore},
+                #{lectureScore},
+                #{projectScore}
+            )
+        ]]>
+    </insert>
 </mapper>

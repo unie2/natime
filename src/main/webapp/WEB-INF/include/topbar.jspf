@@ -51,6 +51,7 @@
     </div>
 </div>
 
+<%--
 <c:if test="${member_info ne null}">
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         <ul class="navbar-nav ml-auto">
@@ -60,4 +61,4 @@
             </a>
         </ul>
     </nav>
-</c:if>
+</c:if>--%>

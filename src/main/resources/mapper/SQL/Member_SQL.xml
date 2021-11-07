@@ -16,7 +16,7 @@
     <select id="Login_2" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
             SELECT
-                id, pw, name
+                id, pw, name, nickname
             FROM
                 member_info
             WHERE

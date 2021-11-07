@@ -19,4 +19,9 @@ public class BoardServiceImpl implements BoardService {
     public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception {
         return boardDAO.selectBoardList(map);
     }
+
+    public void insertBoard(Map<String, Object> map) throws Exception {
+        map.put("content", map.get("content").toString().replaceAll("\r\n", "<br/>").replaceAll("\r", "<br/>").replaceAll("\n", "<br/>"));
+        boardDAO.insertBoard(map);
+    }
 }

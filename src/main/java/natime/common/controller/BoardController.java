@@ -1,5 +1,6 @@
 package natime.common.controller;
 
+import natime.common.common.CommandMap;
 import natime.common.service.BoardService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -42,4 +43,22 @@ public class BoardController {
         return mv;
     }
 
+    @RequestMapping(value = "/boardWrite_page.do")
+    public ModelAndView boardWritePage(CommandMap commandMap, HttpServletRequest req) throws Exception {
+        ModelAndView mv = new ModelAndView("/board/boardWrite");
+        HttpSession session = req.getSession();
+        Map<String, Object> map = (Map<String, Object>) session.getAttribute("member_info");
+
+        mv.addObject("member_info", map);
+        return mv;
+    }
+
+    @RequestMapping(value = "/insertBoard.do")
+    public ModelAndView insertBoard(CommandMap commandMap, HttpServletRequest req) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/boardList_page.do");
+        System.out.println(commandMap.getMap());
+        boardService.insertBoard(commandMap.getMap());
+
+        return mv;
+    }
 }

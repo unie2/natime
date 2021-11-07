@@ -25,16 +25,17 @@
 <body style="width: 70%">
 <%@ include file="/WEB-INF/include/topbar.jspf"%>
     <section class="container">
-        <form action="./boardList.jsp" class="form-inline mt-3" method="get">
+        <form action="${pageContext.request.contextPath}/boardList_page.do?paging=1" class="form-inline mt-3" method="post">
             <select name="lectureDivide" class="form-control max-1 mt-2">
                 <option value="전체">전체</option>
-                <option value="전공">전공</option>
-                <option value="교양">교양</option>
-                <option value="기타">기타</option>
+                <option value="lecture">강의명 순</option>
+                <option value="professor">당당 교수명 순</option>
+                <option value="like">추천 순</option>
+                <option value="star">별점 순</option>
             </select>
-            <input type="text" name="search" class="form-control mx-1 mt-2" placeholder="검색">
+            <input type="text" name="search" class="form-control mx-1 mt-2" placeholder="검색" value="${search.name}">
             <button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
-            <a class="btn btn-primary mx-1 mt-2" href="#">등록하기</a>
+            <a class="btn btn-primary mx-1 mt-2" href="${pageContext.request.contextPath}/boardWrite_page.do">등록하기</a>
         </form>
 
         <c:forEach items="${list}" var="list">
@@ -60,8 +61,9 @@
 
                     <div class="row">
                         <div class="col-9 text-left">
-                            <%--성적<span style="color: red;">A</span>
-                            강의<span style="color: red;">B</span>--%>
+                            성적<span style="color: red;">${list.creditScore}</span>
+                            강의<span style="color: red;">${list.lectureScore}</span>
+                            과제 양<span style="color: red;">${list.projectScore}</span>
                             <span style="color: green;">(추천: ${list.like})</span>
                         </div>
                         <div class="col-3 text-right">

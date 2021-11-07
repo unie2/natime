@@ -14,4 +14,8 @@ public class BoardDAO extends AbstractDAO {
     public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception {
         return (List<Map<String, Object>>) selectList("board.selectBoardList", map);
     }
+
+    public void insertBoard(Map<String, Object> map) throws Exception {
+        insert("board.insertBoard", map);
+    }
 }
