@@ -5,6 +5,7 @@ import natime.common.service.BoardService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -23,9 +24,9 @@ public class BoardController {
     private BoardService boardService;
 
     @RequestMapping(value = "/boardList_page.do")
-    public ModelAndView boardListPage(Map<String, Object> commandMap, HttpServletRequest req) throws Exception {
+    public ModelAndView boardListPage(Map<String, Object> commandMap, HttpServletRequest req, CommandMap command) throws Exception {
         ModelAndView mv = new ModelAndView("/board/boardList");
-        List<Map<String, Object>> list = boardService.selectBoardList(commandMap);
+        //List<Map<String, Object>> list = boardService.selectBoardList(commandMap);
         HttpSession session = req.getSession();
         Map<String, Object> map = (Map) session.getAttribute("member_info");
 
@@ -36,6 +37,8 @@ public class BoardController {
         star.put(3, "★★★☆☆");
         star.put(4, "★★★★☆");
         star.put(5, "★★★★★");
+
+        List<Map<String, Object>> list = boardService.SearchInfo(command.getMap());
 
         mv.addObject("list", list);
         mv.addObject("star", star);
@@ -58,6 +61,16 @@ public class BoardController {
         ModelAndView mv = new ModelAndView("redirect:/boardList_page.do");
         System.out.println(commandMap.getMap());
         boardService.insertBoard(commandMap.getMap());
+
+        return mv;
+    }
+
+    @RequestMapping(value = "/deleteBoard.do")
+    public ModelAndView deleteBoard(CommandMap commandMap, HttpServletRequest req) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/boardList_page.do");
+        System.out.println("idx : " + commandMap.getMap());
+        boardService.deleteBoard(commandMap.getMap());
+
 
         return mv;
     }

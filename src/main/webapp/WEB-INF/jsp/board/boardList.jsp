@@ -25,15 +25,24 @@
 <body style="width: 70%">
 <%@ include file="/WEB-INF/include/topbar.jspf"%>
     <section class="container">
-        <form action="${pageContext.request.contextPath}/boardList_page.do?paging=1" class="form-inline mt-3" method="post">
-            <select name="lectureDivide" class="form-control max-1 mt-2">
-                <option value="전체">전체</option>
-                <option value="lecture">강의명 순</option>
-                <option value="professor">당당 교수명 순</option>
-                <option value="like">추천 순</option>
-                <option value="star">별점 순</option>
+        <form action="${pageContext.request.contextPath}/boardList_page.do" class="form-inline mt-3" method="post">
+            <select name="sort" class="form-control max-1 mt-2">
+                <option value="전체">정렬</option>
+                <option value="year_value">연도순</option>
+                <option value="like_value">추천순</option>
+                <option value="star">별점순</option>
             </select>
-            <input type="text" name="search" class="form-control mx-1 mt-2" placeholder="검색" value="${search.name}">
+            <select name="lectureDivide" class="form-control max-1 mt-2">
+                <option value="전체">검색조건</option>
+                <option value="lecture">강의명</option>
+                <option value="professor">담당 교수명</option>
+                <option value="nickname">닉네임</option>
+                <option value="title">제목</option>
+                <option value="content">내용</option>
+                <%--<option value="like">추천 순</option>
+                <option value="star">별점 순</option>--%>
+            </select>
+            <input type="text" name="search" id="search" class="form-control mx-1 mt-2" placeholder="검색">
             <button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
             <a class="btn btn-primary mx-1 mt-2" href="${pageContext.request.contextPath}/boardWrite_page.do">등록하기</a>
         </form>
@@ -51,7 +60,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="font-weight: bold">
-                        ${list.title}&nbsp;&nbsp;<small>(${list.year}년도 ${list.semester}학기)</small>
+                        ${list.title}&nbsp;&nbsp;<small>(${list.year_value}년도 ${list.semester}학기)</small>
                     </h5>
                     <p class="card-text">
                             ${list.content}
@@ -64,12 +73,17 @@
                             성적<span style="color: red;">${list.creditScore}</span>
                             강의<span style="color: red;">${list.lectureScore}</span>
                             과제 양<span style="color: red;">${list.projectScore}</span>
-                            <span style="color: green;">(추천: ${list.like})</span>
+                            <span style="color: green;">(추천: ${list.like_value})</span>
                         </div>
                         <div class="col-3 text-right">
-                            <a onclick="return confirm('추천하시겠습니까?')" href="#">추천</a>
+                            <input type="hidden" name="idx" value="${list.idx}"/>
+                            <%--<a onclick="return confirm('추천하시겠습니까?')" href="#">추천</a>--%>
+                            <input type="submit" value="추천" class="btn btn-success btn-sm" onclick="if (!confirm('추천하시겠습니까?')){return false;}">
                             <c:if test="${member_info.id eq list.id}">
-                                <a onclick="return confirm('삭제하시겠습니까?')" href="#">삭제</a>
+                                <form action="${pageContext.request.contextPath}/deleteBoard.do" method="post" style="display: inline;">
+                                    <input type="hidden" name="idx" value="${list.idx}">
+                                    <input type="submit" value="삭제" class="btn btn-danger btn-sm" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">
+                                </form>
                             </c:if>
                         </div>
                     </div>

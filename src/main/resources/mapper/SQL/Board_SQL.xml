@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="board">
+
     <select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
             SELECT
@@ -9,6 +10,51 @@
             FROM
                 board_info
         ]]>
+    </select>
+
+    <select id="SearchInfo" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+                *
+            FROM
+                board_info
+        ]]>
+        <choose>
+            <when test="lectureDivide == 'lecture'">
+                WHERE lecture LIKE '%${search}%'
+            </when>
+            <when test="lectureDivide == 'professor'">
+                WHERE professor LIKE '%${search}%'
+            </when>
+            <when test="lectureDivide == 'nickname'">
+                WHERE nickname LIKE '%${search}%'
+            </when>
+            <when test="lectureDivide == 'title'">
+                WHERE title LIKE '%${search}%'
+            </when>
+            <when test="lectureDivide == 'content'">
+                WHERE content LIKE '%${search}%'
+            </when>
+            <otherwise>
+                WHERE lecture LIKE  '%${search}%'
+                OR professor LIKE '%${search}%'
+                OR nickname LIKE '%${search}%'
+                OR title LIKE '%${search}%'
+                OR content LIKE '%${search}%'
+                OR year_value LIKE '%${search}%'
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="sort == 'year_value'">
+                ORDER BY year_value DESC
+            </when>
+            <when test="sort == 'like_value'">
+                ORDER BY like_value DESC
+            </when>
+            <when test="sort == 'star'">
+                ORDER BY star DESC
+            </when>
+        </choose>
     </select>
 
     <insert id="insertBoard" parameterType="hashmap">
@@ -22,7 +68,7 @@
                 professor,
                 title,
                 content,
-                year,
+                year_value,
                 semester,
                 star,
                 creditScore,
@@ -47,4 +93,14 @@
             )
         ]]>
     </insert>
+
+    <delete id="deleteBoard" parameterType="hashmap">
+        <![CDATA[
+            DELETE
+            FROM
+                board_info
+            WHERE
+                idx = #{idx}
+        ]]>
+    </delete>
 </mapper>
