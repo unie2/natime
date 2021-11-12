@@ -93,4 +93,40 @@
                 id = #{id}
         ]]>
     </update>
+
+    <select id="myPage" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+                id, name, nickname, phone, email
+            FROM
+                member_info
+            WHERE
+                id=#{id}
+        ]]>
+    </select>
+
+    <update id="edit_profile" parameterType="hashmap">
+        <![CDATA[
+            UPDATE
+                member_info
+            SET
+                name = #{name},
+                nickname = #{nickname},
+                email = #{email},
+                phone = #{phone}
+            WHERE
+                id = #{id}
+        ]]>
+    </update>
+
+    <update id="edit_password" parameterType="hashmap">
+        <![CDATA[
+            UPDATE
+                member_info
+            SET
+                pw = #{pw}
+            WHERE
+                id = #{id}
+        ]]>
+    </update>
 </mapper>

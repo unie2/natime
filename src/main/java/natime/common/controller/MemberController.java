@@ -114,5 +114,30 @@ public class MemberController {
         return;
     }
 
+    @RequestMapping(value = "/myPage.do")
+    public ModelAndView myPage(HttpServletRequest req) throws Exception {
+        ModelAndView mv = new ModelAndView("/main/myPage");
+        HttpSession session = req.getSession();
+        Map<String, Object> map = (Map<String, Object>) session.getAttribute("member_info");
+
+        mv.addObject("userInfo", memberService.myPage(map));
+        return mv;
+    }
+
+    @RequestMapping(value = "/edit_profile.do")
+    public ModelAndView edit_profile(CommandMap commandMap) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/boardList_page.do");
+
+        memberService.edit_profile(commandMap.getMap());
+        return mv;
+    }
+
+    @RequestMapping(value = "/edit_password.do")
+    public ModelAndView edit_password(CommandMap commandMap) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/boardList_page.do");
+
+        memberService.edit_password(commandMap.getMap());
+        return mv;
+    }
 
 }

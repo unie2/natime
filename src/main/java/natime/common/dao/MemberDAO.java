@@ -37,4 +37,16 @@ public class MemberDAO extends AbstractDAO {
     public int change_pw(Map<String, Object> map) throws Exception {
         return (int) update("member.change_pw", map);
     }
+
+    public Map<String, Object> myPage(Map<String, Object> map) throws Exception {
+        return (Map<String, Object>) selectOne("member.myPage", map);
+    }
+
+    public void edit_profile(Map<String, Object> map) throws Exception {
+        update("member.edit_profile", map);
+    }
+
+    public void edit_password(Map<String, Object> map) throws Exception {
+        update("member.edit_password", map);
+    }
 }

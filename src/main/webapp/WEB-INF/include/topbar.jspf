@@ -37,10 +37,10 @@
                 <a href="#" id="my_lecture" role="button">
                     내 시간표
                 </a>
-                <a href="#" id="lecture_evaluation">
+                <a href="${pageContext.request.contextPath}/boardList_page.do" id="lecture_evaluation">
                     강의평가
                 </a>
-                <a href="#" id="my_page">
+                <a href="${pageContext.request.contextPath}/myPage.do" id="my_page">
                     마이페이지
                 </a>
                 <a href="${pageContext.request.contextPath}/logout.do" id="logout">

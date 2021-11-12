@@ -15,4 +15,10 @@ public interface MemberService {
     String find_id(Map<String, Object> map) throws Exception;
 
     String find_pw(Map<String, Object> map) throws Exception;
+
+    Map<String, Object> myPage(Map<String, Object> map) throws Exception;
+
+    void edit_profile(Map<String, Object> map) throws Exception;
+
+    void edit_password(Map<String, Object> map) throws Exception;
 }

@@ -163,4 +163,28 @@ public class MemberServiceImpl implements MemberService {
         }
         return obj.toJSONString();
     }
+
+    @Override
+    public Map<String, Object> myPage(Map<String, Object> map) throws Exception {
+        Map<String, Object> resultMap = memberDAO.myPage(map);
+
+        resultMap.put("phone", new AES_256().decrypt((String) resultMap.get("phone")));
+        resultMap.put("email", new AES_256().decrypt((String) resultMap.get("email")));
+        return resultMap;
+    }
+
+    @Override
+    public void edit_profile(Map<String, Object> map) throws Exception {
+        map.put("email", aes_256.encrypt((String) map.get("email")));
+        map.put("phone", aes_256.encrypt((String) map.get("phone")));
+
+        memberDAO.edit_profile(map);
+    }
+
+    @Override
+    public void edit_password(Map<String, Object> map) throws Exception {
+        map.put("pw", sha_256.encrypt((String) map.get("pw")));
+
+        memberDAO.edit_password(map);
+    }
 }
