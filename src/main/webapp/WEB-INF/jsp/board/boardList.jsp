@@ -21,8 +21,38 @@
             width: auto;
         }
     </style>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            data_value = [];
+
+            var data = google.visualization.arrayToDataTable(
+                [["lecture","Rating"], ${chart}]
+            );
+
+            var options = {
+                title: "시스템 이용자에 한해서 가장 많이 수강한 과목입니다."
+            };
+            var chart = new google.visualization.PieChart(document.getElementById("mostlecture_piechart"));
+            chart.draw(data, options);
+        }
+
+        function scroll_follow(id) {
+            $(window).scroll(function () {
+                var position = $(window).scrollTop();
+                $(id).stop().animate({top:position + "px"}, 1);
+            });
+        }
+        scroll_follow( "#scroll" );
+        $(document).ready(function(){ for( var i=0; i<200; i++ ) {$('#brr').html($('#brr').html() +"<br>" + i);} });
+    </script>
+
 </head>
-<body style="width: 70%">
+<body style="width: 85%"> <%--style="width: 70%"--%>
 <%@ include file="/WEB-INF/include/topbar.jspf"%>
     <section class="container">
         <form action="${pageContext.request.contextPath}/boardList_page.do" class="form-inline mt-3" method="post">
@@ -46,51 +76,79 @@
             <button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
             <a class="btn btn-primary mx-1 mt-2" href="${pageContext.request.contextPath}/boardWrite_page.do">등록하기</a>
         </form>
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <c:forEach items="${list}" var="list">
+                    <div class="card bg-light mt-3">
+                        <div class="card-header bg-light">
+                            <div class="row">
+                                <div class="col-8 text-left">${list.lecture}&nbsp; <small>${list.professor} 교수님</small></div>
+                                <div class="col-4 text-right" style="border-right: 1px; solid-color: gray; font-weight: bold">
+                                    종합 별점 <span style="color: #f4b30d; font-weight: bold"> ${star[list.star]} </span>
+                                    &nbsp;&nbsp; ${list.nickname}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-weight: bold">
+                                ${list.title}&nbsp;&nbsp;<small>(${list.year_value}년도 ${list.semester}학기)</small>
+                            </h5>
+                            <p class="card-text">
+                                    ${list.content}
+                            </p>
+                        </div>
+                        <div class="card-body">
 
-        <c:forEach items="${list}" var="list">
-            <div class="card bg-light mt-3">
-                <div class="card-header bg-light">
-                    <div class="row">
-                        <div class="col-8 text-left">${list.lecture}&nbsp; <small>${list.professor} 교수님</small></div>
-                        <div class="col-4 text-right" style="border-right: 1px; solid-color: gray; font-weight: bold">
-                            종합 별점 <span style="color: #f4b30d; font-weight: bold"> ${star[list.star]} </span>
-                            &nbsp;&nbsp; ${list.nickname}
+                            <div class="row">
+                                <div class="col-9 text-left">
+                                    성적<span style="color: red;">${list.creditScore}</span>
+                                    강의<span style="color: red;">${list.lectureScore}</span>
+                                    과제 양<span style="color: red;">${list.projectScore}</span>
+                                    <span style="color: green;">(추천: ${list.like_value})</span>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <input type="hidden" name="idx" value="${list.idx}"/>
+                                    <%--<a onclick="return confirm('추천하시겠습니까?')" href="#">추천</a>--%>
+                                    <input type="submit" value="추천" class="btn btn-success btn-sm" onclick="if (!confirm('추천하시겠습니까?')){return false;}">
+                                    <c:if test="${member_info.id eq list.id}">
+                                        <form action="${pageContext.request.contextPath}/deleteBoard.do" method="post" style="display: inline;">
+                                            <input type="hidden" name="idx" value="${list.idx}">
+                                            <input type="submit" value="삭제" class="btn btn-danger btn-sm" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">
+                                        </form>
+                                    </c:if>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold">
-                        ${list.title}&nbsp;&nbsp;<small>(${list.year_value}년도 ${list.semester}학기)</small>
-                    </h5>
-                    <p class="card-text">
-                            ${list.content}
-                    </p>
-                </div>
-                <div class="card-body">
+                </c:forEach>
+            </div>
 
-                    <div class="row">
-                        <div class="col-9 text-left">
-                            성적<span style="color: red;">${list.creditScore}</span>
-                            강의<span style="color: red;">${list.lectureScore}</span>
-                            과제 양<span style="color: red;">${list.projectScore}</span>
-                            <span style="color: green;">(추천: ${list.like_value})</span>
-                        </div>
-                        <div class="col-3 text-right">
-                            <input type="hidden" name="idx" value="${list.idx}"/>
-                            <%--<a onclick="return confirm('추천하시겠습니까?')" href="#">추천</a>--%>
-                            <input type="submit" value="추천" class="btn btn-success btn-sm" onclick="if (!confirm('추천하시겠습니까?')){return false;}">
-                            <c:if test="${member_info.id eq list.id}">
-                                <form action="${pageContext.request.contextPath}/deleteBoard.do" method="post" style="display: inline;">
-                                    <input type="hidden" name="idx" value="${list.idx}">
-                                    <input type="submit" value="삭제" class="btn btn-danger btn-sm" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">
-                                </form>
-                            </c:if>
+
+            <div class="col-xl-4 col-lg-5">
+                <div class="input-form col-md-12 mx-auto">
+                    <div id="scroll" style="position: absolute; width: 100%">
+                        <h4 class="mb-3">차트</h4>
+
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link active" style="color: black" data-toggle="tab" href="#mostCourse">과목별</a> </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="mostCourse" class="profile-edit tab-pane fade in active show">
+                                <br>
+                                <div id="mostlecture_piechart"></div>
+                                <canvas id="myChart" align="center"></canvas>
+                            </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
-        </c:forEach>
+        </div>
     </section>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 <%@include file="/WEB-INF/include/script.jspf"%>
 <script text="text/javascript">
@@ -134,17 +192,4 @@
     });
 </script>
 </body>
-
-<%--<script type="text/javascript">
-    $(function () {
-        $("p").slice(0, 10).show();
-        $("#load").click(function (e) {
-            e.preventDefault();
-            $("p:hidden").slice(0, 10).show();
-            if ($("p:hidden").length == 0) {
-                alert("No more p");
-            }
-        });
-    })
-</script>--%>
 </html>

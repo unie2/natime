@@ -26,4 +26,8 @@ public class BoardDAO extends AbstractDAO {
     public void deleteBoard(Map<String, Object> map) throws Exception {
         delete("board.deleteBoard", map);
     }
+
+    public List<Map<String, Object>> boardChart() throws Exception {
+        return (List<Map<String, Object>>) selectList("board.boardChart");
+    }
 }

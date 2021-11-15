@@ -8,14 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cfbfb81d-778b-4988-91ab-5fae429fa7fb" name="Default" comment="update at 11/12 with login function and registration function">
       <change beforePath="" afterPath="$PROJECT_DIR$/classes/artifacts/natime/natime.war" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/myPage.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/controller/MemberController.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/controller/MemberController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/dao/MemberDAO.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/dao/MemberDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/service/MemberService.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/service/MemberService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/service/MemberServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/service/MemberServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SQL/Member_SQL.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SQL/Member_SQL.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/topbar.jspf" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/topbar.jspf" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,28 +26,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="context-datasource.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/context-datasource.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="37" column="51" lean-forward="false" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+            <state relative-caret-position="133">
+              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/myPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1067">
-              <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -67,12 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>중복확</find>
-      <find>form-control</find>
-      <find>jdbc</find>
-      <find>url-pattern</find>
-      <find>stereo</find>
-      <find>member_info.</find>
       <find>LOGIN</find>
       <find>sample/</find>
       <find>yhn1234</find>
@@ -86,7 +63,6 @@
       <find>List</find>
       <find>로그아웃</find>
       <find>setAttribute</find>
-      <find>member_info</find>
       <find>insertBoard</find>
       <find>boardList</find>
       <find>dataTable</find>
@@ -97,6 +73,13 @@
       <find>hidden</find>
       <find>마이페이지</find>
       <find>가입</find>
+      <find>ajax</find>
+      <find>function</find>
+      <find>find_pw</find>
+      <find>member_info</find>
+      <find>ajaxchart</find>
+      <find>REG</find>
+      <find>emply</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,12 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardWrite.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/natime/common/dao/AbstractDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/mypage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/topbar.jspf" />
         <option value="$PROJECT_DIR$/src/main/java/natime/common/controller/MemberController.java" />
@@ -160,6 +137,12 @@
         <option value="$PROJECT_DIR$/src/main/java/natime/common/dao/MemberDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SQL/Member_SQL.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/myPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/config/spring/context-datasource.xml" />
       </list>
     </option>
@@ -206,7 +189,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -228,8 +211,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -446,8 +431,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,7 +549,7 @@
     </configuration>
     <configuration name="natime" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.92" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Duser.language=en -Duser.region=us" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="natime">
@@ -686,7 +669,9 @@
       <workItem from="1636267875230" duration="10477000" />
       <workItem from="1636535509080" duration="8149000" />
       <workItem from="1636546663288" duration="4891000" />
-      <workItem from="1636683291399" duration="8179000" />
+      <workItem from="1636683291399" duration="8446000" />
+      <workItem from="1636933539967" duration="1271000" />
+      <workItem from="1636934979532" duration="8931000" />
     </task>
     <task id="LOCAL-00001" summary="update at 10/13 with login function">
       <created>1634122855367</created>
@@ -758,11 +743,18 @@
       <option name="project" value="LOCAL" />
       <updated>1636551542171</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update at 11/12 with myPage function">
+      <created>1636691650681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636691650681</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162498000" />
+    <option name="totallyTimeSpent" value="172967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -784,11 +776,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4355363" sideWeight="0.4946695" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3391116" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4355363" sideWeight="0.4946695" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33955225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7036247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -852,7 +844,8 @@
     <MESSAGE value="update at 11/05 with boardlist page and read more function" />
     <MESSAGE value="update at 11/07 with updated boardList page and create boardWrite page" />
     <MESSAGE value="update at 11/10 with searching function and sorting function and board deletion function" />
-    <option name="LAST_COMMIT_MESSAGE" value="update at 11/10 with searching function and sorting function and board deletion function" />
+    <MESSAGE value="update at 11/12 with myPage function" />
+    <option name="LAST_COMMIT_MESSAGE" value="update at 11/12 with myPage function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,9 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="e#200#230#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,9 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,55 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="70" column="59" lean-forward="false" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="102" column="28" lean-forward="false" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
-          <folding>
-            <marker date="1636551063714" expanded="true" signature="285:353" ph="SELECT * FRO... board_info" />
-            <marker date="1636551063714" expanded="true" signature="1992:2797" ph="INSERT INTO board_info... " />
-            <marker date="1636551063714" expanded="true" signature="2909:3006" ph="DELETE FROM board_info" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/dao/AbstractDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
           <caret line="116" column="5" lean-forward="false" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,32 +1071,6 @@
         <state relative-caret-position="266">
           <caret line="14" column="95" lean-forward="false" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="40" column="51" lean-forward="true" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/findInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardWrite.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="81" column="111" lean-forward="false" selection-start-line="81" selection-start-column="111" selection-end-line="81" selection-end-column="111" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="49" column="44" lean-forward="false" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,6 +1128,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="22" column="65" lean-forward="false" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/myPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="116" column="14" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="116" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1226,23 +1147,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/myPage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardWrite.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1067">
-          <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        <state relative-caret-position="-712">
+          <caret line="81" column="111" lean-forward="false" selection-start-line="81" selection-start-column="111" selection-end-line="81" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/service/BoardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/dao/BoardDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="30" column="74" lean-forward="false" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SQL/Board_SQL.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="112" column="20" lean-forward="false" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1636938982504" expanded="true" signature="285:353" ph="SELECT * FRO... board_info" />
+            <marker date="1636938982504" expanded="true" signature="1992:2797" ph="INSERT INTO board_info... " />
+            <marker date="1636938982504" expanded="true" signature="2909:3006" ph="DELETE FROM board_info" />
+            <marker date="1636938982504" expanded="true" signature="3138:3276" ph="SELECT COUNT... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/main/findInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-361">
+          <caret line="83" column="127" lean-forward="false" selection-start-line="83" selection-start-column="120" selection-end-line="83" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/service/BoardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/natime/common/controller/BoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/board/boardList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1772">
+          <caret line="128" column="75" lean-forward="false" selection-start-line="128" selection-start-column="75" selection-end-line="128" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/context-datasource.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="37" column="51" lean-forward="false" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+        <state relative-caret-position="133">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding />
         </state>
       </provider>

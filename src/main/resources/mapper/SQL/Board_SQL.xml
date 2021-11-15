@@ -103,4 +103,15 @@
                 idx = #{idx}
         ]]>
     </delete>
+
+    <select id="boardChart" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+                COUNT(*) AS COUNT, lecture
+            FROM
+                board_info
+            GROUP BY
+                lecture
+        ]]>
+    </select>
 </mapper>

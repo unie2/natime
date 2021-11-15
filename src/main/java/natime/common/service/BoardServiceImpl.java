@@ -34,4 +34,8 @@ public class BoardServiceImpl implements BoardService {
     public void deleteBoard(Map<String, Object> map) throws Exception {
         boardDAO.deleteBoard(map);
     }
+
+    public List<Map<String, Object>> boardChart() throws Exception {
+        return boardDAO.boardChart();
+    }
 }
