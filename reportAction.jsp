@@ -30,7 +30,7 @@ script.close();
 return;
 }
 
-String host = "http://localhost:8000/Lecure_Evaluation/";
+String host = "http://localhost:8001/Lecure_Evaluation/";
 String from = "gnlsk99@gmail.com";
 String to = "mk123ok@naver.com";
 String subject = "강의평가 사이트에서 접수된 신고 메일입니다.";
