@@ -1,2 +1,2 @@
 # natime
-'natime' Project, a course evaluation website
+`NaTime` Project, a course evaluation website !
